@@ -6,8 +6,11 @@
 <body>
     <h1>{{ $mailData['name'] }}</h1>
   
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>{{ $mailData['email'] }}</p>
+    <br>
+    <p>{{ $mailData['subject'] }}</p>
+    <br>
+    <p>{{ $mailData['message'] }}</p>
      
     <p>Thank you</p>
 </body>

@@ -56,10 +56,13 @@ class ContectEmailController extends Controller
              DB::commit();
              $mailData = [
                 'title' => 'This is Test Mail',
-                'name'  => $request->name
+                'name'  => $request->name,
+                'message' => $request->message,
+                'email' => $request->email,
+                'subject' => $request->subject,
             ];
                
-            Mail::to($request->email)->send(new contactEmail($mailData));
+            Mail::to(env('MAIL_USERNAME'))->send(new contactEmail($mailData));
             return ResponseClass::sendResponse(new EmailResource($product),'email Create Successful',201);
 
         }catch(\Exception $ex){

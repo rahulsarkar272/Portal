@@ -835,7 +835,7 @@ export default {
             };
         },
         submitForm() {
-            console.log("data");
+            
             // Validate form
             if (!this.validateForm()) {
                 return;
@@ -853,6 +853,8 @@ export default {
                     }
                 })
                 .then(response => {
+                    alert('Your message has been sent. Thank you!');
+                    window.location.reload();
                     if (response.ok) {
                         this.successMessage = 'Your message has been sent. Thank you!';
                         this.formData = {
